@@ -76,7 +76,7 @@ let Newgame = document.querySelector(".new-game").addEventListener("click",funct
 
         IsPlayer1=true
     }
-    document.querySelector(".player-active").style.backgroundColor="rgba(255, 255, 255, 0.4)"
+    // document.querySelector(".player-active").style.backgroundColor="rgba(255, 255, 255, 0.4)"
     document.querySelector(".player1 .current p").textContent=0;
     document.querySelector(".player2 .current p").textContent=0;
     document.querySelector(".player1 p:first-of-type").textContent=0;
