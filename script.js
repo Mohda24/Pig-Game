@@ -1,5 +1,5 @@
 
-
+const Chinwi = new Audio("Chinwi.mp3");
 // check for player
 let IsPlayer1=true;
 // Function of rull
@@ -58,7 +58,8 @@ function hold(){
     else{
         roll.removeEventListener("click",rolle);
         btnhold.removeEventListener("click",hold)
-        document.querySelector("section.player-active").style.backgroundColor="#5dff5d"
+        document.querySelector("section.player-active").classList.add("winner")
+        Chinwi.play();
         
     }
     
@@ -67,13 +68,10 @@ function hold(){
 btnhold.addEventListener("click",hold);
 // New game function
 let Newgame = document.querySelector(".new-game").addEventListener("click",function(){
-    if(IsPlayer1){
-        document.querySelector(".player1").classList.add("player-active")
-    }
-    else{
+    if(!IsPlayer1){
         document.querySelector(".player1").classList.add("player-active")
         document.querySelector(".player2").classList.remove("player-active")
-
+        document.querySelector(".player2").classList.remove("winner")
         IsPlayer1=true
     }
     // document.querySelector(".player-active").style.backgroundColor="rgba(255, 255, 255, 0.4)"
@@ -81,6 +79,7 @@ let Newgame = document.querySelector(".new-game").addEventListener("click",funct
     document.querySelector(".player2 .current p").textContent=0;
     document.querySelector(".player1 p:first-of-type").textContent=0;
     document.querySelector(".player2 p:first-of-type").textContent=0;
+    document.querySelector(".player-active").classList.remove("winner");
     roll.addEventListener("click",rolle);
     btnhold.addEventListener("click",hold);
 });
